@@ -15,16 +15,16 @@ import java.nio.file.Paths;
  *
  * @author emilezimmer
  */
-public class Order {
+public class Exit {
     
     private static final String DELIMITER = ",";
     
-    public static String[][] getOrder(){
+    public static String[][] getExit(){
         
-        String[][] order = null;
+        String[][] exit = null;
         
         try{
-            File file = new File("entrance.txt");
+            File file = new File("exit.txt");
             
             FileReader fr1 = new FileReader(file);
             FileReader fr2 = new FileReader(file); 
@@ -42,7 +42,7 @@ public class Order {
                
             }
             
-            order = new String[k][6]; 
+            exit = new String[k][4]; 
             
             while((line = br2.readLine()) != null)
             {
@@ -52,7 +52,7 @@ public class Order {
                 int j = 0;
 
                 for (String value : resultat) {
-                    order[i][j] = value;
+                    exit[i][j] = value;
                     j++;
                 }
 
@@ -65,26 +65,26 @@ public class Order {
         }catch(Exception e){
             System.out.println(e);
         }
-        return order;
+        return exit;
     }
     
-    public static void newOrder(String[] Input)
+    public static void newExit(String[] Input)
     {
         
-      String[][] data = Order.getOrder();
+      String[][] data = Exit.getExit();
       
       try
-      (final BufferedWriter writer = Files.newBufferedWriter(Paths.get("entrance.txt"))){
+      (final BufferedWriter writer = Files.newBufferedWriter(Paths.get("exit.txt"))){
         
         int i = 0;
         
         for (String[] tab: data) {
-            writer.write(data[i][0]+DELIMITER+data[i][1]+DELIMITER+data[i][2]+DELIMITER+data[i][3]+DELIMITER+data[i][4]+DELIMITER+data[i][5]);
+            writer.write(i+DELIMITER+data[i][1]+DELIMITER+data[i][2]+DELIMITER+data[i][3]);
             writer.newLine();
             i++;
         }  
         
-        writer.write(Input[0]+DELIMITER+Input[1]+DELIMITER+Input[2]+DELIMITER+Input[3]+DELIMITER+Input[4]+DELIMITER+Input[5]);
+        writer.write(i+DELIMITER+Input[0]+DELIMITER+Input[1]+DELIMITER+Input[2]);
       }
       catch(Exception e)
       {
@@ -93,10 +93,10 @@ public class Order {
         
     }
     
-    public static void deleteOrder(String lot)
+    public static void deleteExit(String id)
     {
         
-        String[][] data_input = Order.getOrder();
+        String[][] data_input = Exit.getExit();
         String[][] data_output;
         
         int j = 0;
@@ -104,7 +104,7 @@ public class Order {
         
         for (int i = 0; i < data_input.length; i++)
             {
-                if(data_input[i][4].equals(lot))
+                if(data_input[i][0].equals(id))
                 {
                     
                 }else{
@@ -113,32 +113,32 @@ public class Order {
             
             }
         
-        data_output = new String[k][6];
+        data_output = new String[k][4];
         
         for (int i = 0; i < data_input.length; i++)
             {
-                if(data_input[i][4].equals(lot))
+                if(data_input[i][0].equals(id))
                 {
+                    
+                    
                     
                 }else{
                     data_output[j][0] = data_input[i][0];
                     data_output[j][1] = data_input[i][1];
                     data_output[j][2] = data_input[i][2];
                     data_output[j][3] = data_input[i][3];
-                    data_output[j][4] = data_input[i][4];
-                    data_output[j][5] = data_input[i][5];
                     j++;
                 }
             
             }
         
         try
-            (final BufferedWriter writer = Files.newBufferedWriter(Paths.get("entrance.txt"))){
+            (final BufferedWriter writer = Files.newBufferedWriter(Paths.get("exit.txt"))){
 
               int i = 0;
 
               for (String[] tab: data_output) {
-                  writer.write(data_output[i][0]+DELIMITER+data_output[i][1]+DELIMITER+data_output[i][2]+DELIMITER+data_output[i][3]+DELIMITER+data_output[i][4]+DELIMITER+data_output[i][5]);
+                  writer.write(i+DELIMITER+data_output[i][1]+DELIMITER+data_output[i][2]+DELIMITER+data_output[i][3]);
                   writer.newLine();
                   i++;
               }  

@@ -10,7 +10,7 @@ package Class;
  */
 public class Form {
     
-    public static int checkInput(String[] input){
+    public static int checkEntrance(String[] input){
         
         if(input[0].isEmpty()==true
                 ||
@@ -23,6 +23,21 @@ public class Form {
                 input[4].isEmpty() == true
                 ||
                 input[5].isEmpty() == true
+                ){
+            return 1;
+        }else{
+            return 0;
+        }
+        
+    }
+    
+    public static int checkExit(String[] input){
+        
+        if(input[0].isEmpty()==true
+                ||
+                input[1].isEmpty()==true
+                ||
+                input[2].isEmpty()==true
                 ){
             return 1;
         }else{

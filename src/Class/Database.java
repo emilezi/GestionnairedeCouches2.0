@@ -21,8 +21,9 @@ public class Database {
     {
         int value = 0;
         
-        File file = new File("data.txt"); 
-        if(file.exists()){
+        File file1 = new File("entrance.txt");
+        File file2 = new File("exit.txt");
+        if(file1.exists() && file2.exists()){
           value = 0;
         }else{
           value = 1;
@@ -39,8 +40,9 @@ public class Database {
       
       try
       {
-        file = new FileWriter("data.txt");
-      
+        file = new FileWriter("entrance.txt");
+        file.close();
+        file = new FileWriter("exit.txt");
         file.close();
       }
       catch(Exception e)
