@@ -38,6 +38,8 @@ public class Form {
                 input[1].isEmpty()==true
                 ||
                 input[2].isEmpty()==true
+                ||
+                input[3].isEmpty()==true
                 ){
             return 1;
         }else{

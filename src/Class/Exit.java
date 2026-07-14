@@ -42,7 +42,7 @@ public class Exit {
                
             }
             
-            exit = new String[k][4]; 
+            exit = new String[k][5]; 
             
             while((line = br2.readLine()) != null)
             {
@@ -79,12 +79,12 @@ public class Exit {
         int i = 0;
         
         for (String[] tab: data) {
-            writer.write(i+DELIMITER+data[i][1]+DELIMITER+data[i][2]+DELIMITER+data[i][3]);
+            writer.write(i+DELIMITER+data[i][1]+DELIMITER+data[i][2]+DELIMITER+data[i][3]+DELIMITER+data[i][4]);
             writer.newLine();
             i++;
         }  
         
-        writer.write(i+DELIMITER+Input[0]+DELIMITER+Input[1]+DELIMITER+Input[2]);
+        writer.write(i+DELIMITER+Input[0]+DELIMITER+Input[1]+DELIMITER+Input[2]+DELIMITER+Input[3]);
       }
       catch(Exception e)
       {
@@ -113,7 +113,7 @@ public class Exit {
             
             }
         
-        data_output = new String[k][4];
+        data_output = new String[k][5];
         
         for (int i = 0; i < data_input.length; i++)
             {
@@ -127,6 +127,7 @@ public class Exit {
                     data_output[j][1] = data_input[i][1];
                     data_output[j][2] = data_input[i][2];
                     data_output[j][3] = data_input[i][3];
+                    data_output[j][4] = data_input[i][4];
                     j++;
                 }
             
@@ -138,7 +139,7 @@ public class Exit {
               int i = 0;
 
               for (String[] tab: data_output) {
-                  writer.write(i+DELIMITER+data_output[i][1]+DELIMITER+data_output[i][2]+DELIMITER+data_output[i][3]);
+                  writer.write(i+DELIMITER+data_output[i][1]+DELIMITER+data_output[i][2]+DELIMITER+data_output[i][3]+DELIMITER+data_output[i][4]);
                   writer.newLine();
                   i++;
               }  
