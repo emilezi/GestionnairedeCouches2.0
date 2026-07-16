@@ -100,7 +100,7 @@ public class entranceApplication extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        withdrawButton = new javax.swing.JButton();
+        csvButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -108,6 +108,7 @@ public class entranceApplication extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
+        backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -152,12 +153,6 @@ public class entranceApplication extends javax.swing.JFrame {
 
         jLabel4.setText("Prix :");
 
-        priceTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                priceTextFieldActionPerformed(evt);
-            }
-        });
-
         categoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3 : 6-10 Kg", "4 : 9-14 Kg", "4+ : 10-15 Kg", "5 : 11-16 Kg", "6 : 13-18 Kg", "7 : +15 Kg" }));
 
         jLabel5.setText("N° de lot :");
@@ -180,14 +175,14 @@ public class entranceApplication extends javax.swing.JFrame {
 
         jLabel16.setText("0");
 
-        withdrawButton.setText("Retirer");
-        withdrawButton.addActionListener(new java.awt.event.ActionListener() {
+        csvButton.setText("Format CSV");
+        csvButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                withdrawButtonActionPerformed(evt);
+                csvButtonActionPerformed(evt);
             }
         });
 
-        jLabel7.setText("Nombr totale de couches :");
+        jLabel7.setText("Nombr totale de paquets :");
 
         jLabel8.setText("0");
 
@@ -200,6 +195,13 @@ public class entranceApplication extends javax.swing.JFrame {
         jLabel20.setText("4 : ");
 
         jLabel21.setText("0");
+
+        backButton.setText("Retour");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -226,7 +228,7 @@ public class entranceApplication extends javax.swing.JFrame {
                             .addComponent(priceTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel17)
@@ -250,11 +252,12 @@ public class entranceApplication extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(withdrawButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(csvButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
                             .addComponent(dateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
-                            .addComponent(lotTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lotTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -292,7 +295,9 @@ public class entranceApplication extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(dateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(withdrawButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(csvButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -324,7 +329,7 @@ public class entranceApplication extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel15)
                             .addComponent(jLabel14))))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         pack();
@@ -348,13 +353,12 @@ public class entranceApplication extends javax.swing.JFrame {
         
         if(Form.checkEntrance(Input)==0){
             Order.newOrder(Input);
+            wordingTextField.setText("");
+            quantityTextField.setText("");
+            priceTextField.setText("");
+            lotTextField.setText("");
+            dateTextField.setText("");
         }
-        
-        wordingTextField.setText("");
-        quantityTextField.setText("");
-        priceTextField.setText("");
-        lotTextField.setText("");
-        dateTextField.setText("");
         
         deleteTable();
         initTable();
@@ -375,15 +379,17 @@ public class entranceApplication extends javax.swing.JFrame {
             
     }//GEN-LAST:event_deleteButtonActionPerformed
 
-    private void withdrawButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_withdrawButtonActionPerformed
-        exitApplication exitApplication = new exitApplication();
-        exitApplication.setVisible(true);
-        this.dispose();        // TODO add your handling code here:
-    }//GEN-LAST:event_withdrawButtonActionPerformed
+    private void csvButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_csvButtonActionPerformed
+        csv_entranceAlert csv_entranceAlert = new csv_entranceAlert();
+        csv_entranceAlert.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_csvButtonActionPerformed
 
-    private void priceTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priceTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_priceTextFieldActionPerformed
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        homeApplication homeApplication = new homeApplication();
+        homeApplication.setVisible(true);
+        this.dispose(); 
+    }//GEN-LAST:event_backButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -424,7 +430,9 @@ public class entranceApplication extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
+    private javax.swing.JButton backButton;
     private javax.swing.JComboBox<String> categoryComboBox;
+    private javax.swing.JButton csvButton;
     private javax.swing.JTextField dateTextField;
     private javax.swing.JButton deleteButton;
     private javax.swing.JLabel jLabel1;
@@ -453,7 +461,6 @@ public class entranceApplication extends javax.swing.JFrame {
     private javax.swing.JTextField lotTextField;
     private javax.swing.JTextField priceTextField;
     private javax.swing.JTextField quantityTextField;
-    private javax.swing.JButton withdrawButton;
     private javax.swing.JTextField wordingTextField;
     // End of variables declaration//GEN-END:variables
 

@@ -46,7 +46,7 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel7" alignment="0" pref="177" max="32767" attributes="0"/>
+                          <Component id="jLabel7" alignment="0" pref="191" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -77,11 +77,12 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="withdrawButton" min="-2" pref="173" max="-2" attributes="0"/>
+                          <Component id="csvButton" min="-2" pref="173" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="dateTextField" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="lotTextField" alignment="0" min="-2" pref="171" max="-2" attributes="0"/>
+                          <Component id="backButton" min="-2" pref="173" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -125,7 +126,9 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="dateTextField" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="withdrawButton" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="csvButton" min="-2" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="backButton" min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jScrollPane1" min="-2" pref="533" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
@@ -166,7 +169,7 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="70" max="32767" attributes="0"/>
+              <EmptySpace pref="98" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -241,9 +244,6 @@
     <Component class="javax.swing.JTextField" name="quantityTextField">
     </Component>
     <Component class="javax.swing.JTextField" name="priceTextField">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="priceTextFieldActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="categoryComboBox">
       <Properties>
@@ -316,17 +316,17 @@
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="withdrawButton">
+    <Component class="javax.swing.JButton" name="csvButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Retirer"/>
+        <Property name="text" type="java.lang.String" value="Format CSV"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="withdrawButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="csvButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombr totale de couches :"/>
+        <Property name="text" type="java.lang.String" value="Nombr totale de paquets :"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
@@ -358,6 +358,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="backButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Retour"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

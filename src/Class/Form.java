@@ -31,6 +31,21 @@ public class Form {
         
     }
     
+    public static int checkEntranceCSV(String[] input){
+        
+        if(input[0].isEmpty()==true
+                ||
+                input[1].isEmpty()==true
+                ||
+                input[2].isEmpty()==true
+                ){
+            return 1;
+        }else{
+            return 0;
+        }
+        
+    }
+    
     public static int checkExit(String[] input){
         
         if(input[0].isEmpty()==true
