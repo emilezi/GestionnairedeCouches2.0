@@ -129,7 +129,7 @@ public class csv_exitAlert extends javax.swing.JFrame {
         Input[1] = type;
         Input[2] = name;
 
-        if(Form.checkEntranceCSV(Input)==0){
+        if(Form.checkCSV(Input)==0){
             CSV.exportExitCSV(Input);
             exitApplication exitApplication = new exitApplication();
             exitApplication.setVisible(true);

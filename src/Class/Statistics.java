@@ -46,20 +46,20 @@ public class Statistics {
         
         for (String[] tab: data_exit) {
             
-            statistics[0] = statistics[0] - Integer.parseInt(data_exit[j][1]);
+            statistics[0] = statistics[0] - Integer.parseInt(data_exit[j][2]);
             
-            if(data_exit[j][2].equals("3 ")){
-                statistics[1] = statistics[1] - Integer.parseInt(data_exit[j][1]);
-            }else if(data_exit[j][2].equals("4 ")){
-                statistics[2] = statistics[2] - Integer.parseInt(data_exit[j][1]);
-            }else if(data_exit[j][2].equals("4+")){
-                statistics[3] = statistics[3] - Integer.parseInt(data_exit[j][1]);
-            }else if(data_exit[j][2].equals("5 ")){
-                statistics[4] = statistics[4] - Integer.parseInt(data_exit[j][1]);
-            }else if(data_exit[j][2].equals("6 ")){
-                statistics[5] = statistics[5] - Integer.parseInt(data_exit[j][1]);
-            }else if(data_exit[j][2].equals("7 ")){
-                statistics[6] = statistics[6] - Integer.parseInt(data_exit[j][1]);
+            if(data_exit[j][3].equals("3 ")){
+                statistics[1] = statistics[1] - Integer.parseInt(data_exit[j][2]);
+            }else if(data_exit[j][3].equals("4 ")){
+                statistics[2] = statistics[2] - Integer.parseInt(data_exit[j][2]);
+            }else if(data_exit[j][3].equals("4+")){
+                statistics[3] = statistics[3] - Integer.parseInt(data_exit[j][2]);
+            }else if(data_exit[j][3].equals("5 ")){
+                statistics[4] = statistics[4] - Integer.parseInt(data_exit[j][2]);
+            }else if(data_exit[j][3].equals("6 ")){
+                statistics[5] = statistics[5] - Integer.parseInt(data_exit[j][2]);
+            }else if(data_exit[j][3].equals("7 ")){
+                statistics[6] = statistics[6] - Integer.parseInt(data_exit[j][2]);
             }
             
             j++;

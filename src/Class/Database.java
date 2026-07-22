@@ -12,10 +12,6 @@ import java.io.*;
  */
 public class Database {
     
-    private static final String SEPARATOR = "\n";
-    
-    private static final String HEADER = "Libellé,Quantité,Catégorie,Prix,N° de lot,Date";
-    
   
     public static int checkTXT()
     {
